@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tren</title>
+    </head>
+    <body>
+        <script>
+            //04 suben:4 bajan:0
+            let numero=68573528467604;
+            let viajeros=0;
+            
+            for(let i=String(numero).length;i>=0;i=i-2){
+                viajeros+=Number(String(numero).charAt(i-1));
+                viajeros-=Number(String(numero).charAt(i-2));
+                console.log("Suben "+Number(String(numero).charAt(i-1)));
+                console.log("Bajan "+Number(String(numero).charAt(i-2)));
+                console.log("Pasajeros en la estacion: "+viajeros);
+            }
+            //var arrayDeCadenas = cadenaADividir.split(separador);
+            //for (var i=0; i < arrayDeCadenas.length; i++) {
+            //document.write(arrayDeCadenas[i] + " / ");}
+            console.log("Viajeros: "+viajeros);
+            viajeros=0;
+            let numero2=String(numero).split("").reverse();
+            for(let i=0;i<numero2.length;i=i+2){
+                viajeros+=Number(numero2[i]);
+                viajeros-=Number(numero2[i+1]);
+                console.log("Suben "+numero2[i]);
+                console.log("Bajan "+numero2[i+1]);
+                console.log("Pasajeros en la estacion: "+viajeros);
+            }
+            let pasajeros=[[4,0],[6,7],[6,4],[8,2],[5,3],[7,5],[8,6]];
+            let total=0;
+            console.log("Viajeros: "+viajeros);
+            for(let i=0;i<pasajeros.length;i++){
+                total+=pasajeros[i][0];
+                total-=pasajeros[i][1];
+            }
+            console.log("Total "+total);
+            //reduce
+            let tren=(pasajeros)=>pasajeros.reduce((acumulador,[suben,bajan])=>acumulador+suben-bajan,0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //var arrayDeCadenas = cadenaADividir.split(separador);-->
+            //for (var i=0; i < arrayDeCadenas.length; i++) {
+            //document.write(arrayDeCadenas[i] + " / ");}-->
+        </script>                
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<--var arrayDeCadenas = cadenaADividir.split(separador);-->
+            //for (var i=0; i < arrayDeCadenas.length; i++) {
+            //document.write(arrayDeCadenas[i] + " / ");}-->

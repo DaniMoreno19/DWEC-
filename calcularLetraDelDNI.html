@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Calcular la letra del DNI</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+</body>
+<script>
+
+    function letraDNI(dni) {
+        var cadena = "TRWAGMYFPDXBNJZSQVHLCKET";
+        var posicion = dni % 23;
+        var letra = cadena.substring(posicion, posicion + 1);
+        return dni + " - " + letra;
+    }
+    document.write(letraDNI("35738881"));
+</script>
+</body>
+
+</html>
+
+
+
+
+
+</script>
+
+</html>

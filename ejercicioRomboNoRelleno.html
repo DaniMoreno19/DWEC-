@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Ejercicio Rombo</title>
+      <script type="text/javascript">
+          function caracteres(caracter, numero){
+                for (let i=0; i<numero; i++){
+                    document.write(caracter);
+                }
+            }
+
+            function espacios(numero){
+                caracteres('&nbsp', numero);
+            }
+
+            function asterisco(){
+                document.write("*");
+            }
+
+            function saltoDeLinea(){
+                document.write("</br>");
+            }
+
+            function lineaNormal(inicio, intermedio){ //Es la que se aplica en todas las filas menos primera y ultima
+                espacios(inicio);
+                 asterisco();
+                 espacios(intermedio);
+                 asterisco();
+                 saltoDeLinea();
+            }
+            function lineaLimite(inicio){ //Se aplica en la primera y la ultima
+                espacios(inicio);
+                asterisco();
+                saltoDeLinea();
+            }
+
+            function rombo(niveles){
+                let espInicial;
+                let espIntermedio;
+
+                //Primera linea
+                espInicial = niveles / 2 - 1;
+                lineaLimite(espInicial--);
+                //Primera mitad del rombo
+                espIntermedio = 1;
+                for(let linea = 0; linea < niveles / 2 - 1; linea++){ 
+                    lineaNormal(espInicial, espIntermedio);
+                    espInicial--;
+                    espIntermedio +=2;
+                }
+
+                //Segunda mitad del rombo
+                espInicial += 2;
+                espIntermedio -= 4;
+                for(let linea = 0; linea < (niveles / 2) - 2; linea++){ 
+                    lineaNormal(espInicial, espIntermedio);
+                    espInicial++;
+                    espIntermedio -=2;
+                }
+
+                //Ultima linea
+                if (niveles > 1) {
+                    lineaLimite(espInicial);
+                }
+            }
+      </script>
+   </head>
+   <body>
+        <p id="rombo"></p>
+        <script>
+         let niveles = 0
+         while (niveles % 2 == 0){
+            niveles = prompt('Niveles (impar): ', 7);
+         }
+         rombo(niveles);
+        </script>                
+   </body>
+</html>

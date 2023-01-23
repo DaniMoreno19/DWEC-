@@ -1,0 +1,105 @@
+<html lang='es'>
+    <html>
+        <head>
+            <title>Patrones</title>
+                <meta charset='UTv1-8'/>
+           
+        </head>
+       <body>
+        <script>
+
+            /*
+            let cadena = String(prompt("Introduzca una cadena de caracteres"));
+            
+            let cadena1=cadena.split("00").length;
+            let cadena2=cadena.split("101").length;
+            let cadena3=cadena.split("ABC").length;
+            let cadena4=cadena.split("H0").length;
+
+            let cadenaa=String(cadena1+cadena2+cadena3+cadena4);
+
+            document.write
+            */
+        //SOLUCIÓN 1 JUANJO
+        function main(){
+
+            let texto="000111101000ABCHO";
+            let patronesABuscar=["00","101","ABC","HO"];
+            let i;
+
+            //Total de coincidencias de todos los patrones
+            let total=0;
+
+            //Recorremos el vector patronesABuscar
+
+            for(i=0; i<patronesABuscar.length;i++){
+
+                //Buscamos el patron
+                let res= buscarPatron(texto, patronesABuscar[i]);
+                alert("El patron "+patronesABuscar[i] + " esta "+res+" veces");
+                //Acumulamos el total
+                total+=res;
+            }
+
+            alert("El total de patrones encontrados es: "+total)
+        }
+        main();
+
+        //funcion utilizada en la funcion main
+        function buscarPatron(texto,patron){
+            let i;
+            let encontrados=0;
+            
+            let textoMAY=texto.toUpperCase();
+            let patronMAY=patron.toUpperCase();
+
+
+            for(i=0; i<textoMAY.length;i++){
+                let cad= textoMAY.substring(i, i+ patronMAY.length);
+
+                if (cad===patronMAY){
+                    encontrados++;
+                }
+            }
+            return encontrados;
+        }
+
+
+/*
+        //SOLUCIÓN SENCILLA
+        let cadena = prompt("Introduce una cadena");
+        cadena.toUpperCase();
+
+        let verdadero02=cadena.includes("00")
+        let verdadero01=cadena.includes("101")
+        let verdadero03=cadena.includes("ABC")
+        let verdadero04=cadena.includes("HO")
+
+        let contador1=0;
+        let contador2=0;
+        let contador3=0;
+        let contador4=0;
+
+        for(let index=0;index<=cadena.length;index++){
+            if(cadena.charAt(index)=="0" && cadena.charAt(index+1)=="0"){
+                contador1++;
+            }
+            if(cadena.charAt(index)=="1" && cadena.charAt(index+1)=="0" && cadena.charAt(index+2)=="1"){
+                contador2++;
+            }
+            if(cadena.charAt(index)=="A" && cadena.charAt(index+1)=="B" && cadena.charAt(index+2)=="C"){
+                contador3++;
+            }
+            if(cadena.charAt(index)=="H" && cadena.charAt(index+1)=="O"){
+                contador4++;
+            }
+        }
+*/
+
+        
+
+
+            </script>
+        </body>
+    </html>
+           

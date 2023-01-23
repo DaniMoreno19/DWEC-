@@ -1,0 +1,34 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <script>
+
+            let numAdivinar = Math.ceil(Math.random() * 100);
+            alert (numAdivinar);
+            let c = 0;
+            let numPantalla = 0;
+            while (numPantalla !== numAdivinar) {
+                let numPantalla = Number (prompt ("Introduce un número: "));
+                if (numPantalla < numAdivinar) {
+                    alert("El número a adivinar es mayor");
+                    c++;
+                    alert("Número de intentos: " + c);
+                }
+                else if (numPantalla > numAdivinar){
+                    alert("El número a adivinar es menor");
+                    c++;
+                    alert("Número de intentos: " + c);
+                }
+                else{
+                    alert ("Has acertado el número en " + c + " intentos");
+                    break;
+                }
+                
+            }
+        
+        </script>
+
+    </body>
+</html>
