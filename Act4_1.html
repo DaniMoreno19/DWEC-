@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>childNodes</title>
+    <meta charset="UTF-8">
+    <!--Confeccionar una página que contenga un div con tres párrafos. Luego acceder a la propiedad
+childNodes, verificar cuantos hijos tiene y de que tipo de nodos se tratan.-->
+    
+</head>
+<body>
+    <div id="miDiv">
+        <p>Este es el primer párrafo</p>
+        <p>Este es el segundo párrafo</p>
+        <p>Este es el tercer párrafo</p>
+    </div>
+    <input type="button" value="Cantidad de Hijos del DIV" onclick="cantidadHijos()">
+
+    <script>
+        function cantidadHijos() {
+    let parrafos = document.getElementById('miDiv')
+    alert('La cantidad de hijos del nodo div es: ' + parrafos.childNodes.length)
+    let cadena = ""
+    for (let x = 0; x < parrafos.childNodes.length; x++) {
+        if (parrafos.childNodes[x].nodeType == Node.TEXT_NODE)
+            cadena = cadena + "Nodo tipo Texto\n"
+        if (parrafos.childNodes[x].nodeType == Node.ELEMENT_NODE)
+            cadena = cadena + "Nodo tipo Elemento\n"
+    }
+    alert(cadena)
+}
+
+    </script>
+</body>
+</html>

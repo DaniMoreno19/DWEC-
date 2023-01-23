@@ -1,0 +1,89 @@
+
+<!--
+Se debe añadir un checkbox para seleccionar/deseleccionar todos los días con
+disponibilidad.
+Realizar una validación (débil, en el lado del cliente) utilizando indistintamente los
+métodos vistos en clase (los tres deben estar representados) con las siguientes
+restricciones:
+• Nombre: debe ser obligatorio
+• Mensaje: de entre 2 y 500 caracteres
+• Color por defecto: oscuro
+• Días: seleccionar al menos dos
+• Preferente: por defecto marcado: lunes
+• Botón de “Hacer click”: ir a Google.com
+Adaptar el formulario, para que al hacer clic para enviar información, se envíe la
+información a un correo electrónico en texto plano
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <title>Ejercicio de Formulario</title>
+    <meta charset="UTF-8">
+    <script src="201DMM.js"></script>
+    <style>
+        .error {
+            border: solid 4px red;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Datos personales</legend>
+    <form id="miFormulario" method="post" action="mailto:dani.moreno192003@gmail.com" enctype="text/plain">
+        <div align="center">
+        Introduce tu nombre
+        <input type="text" name="nombre" id="nombre" required><br><br>
+        
+        Mensaje<br><textarea name="mitextarea" id="comentario" minlength="2" maxlength="500" cols="80" rows="15" title="Introduce entre 2 y 500 caracteres" required></textarea><br>
+    </fieldset>
+    <br> 
+    <div align="center">
+        <label for="color">Elige un color:</label><br>
+        Rojo<input type="radio" name="color" id="color"><br>
+        Verde<input type="radio" name="color" id="color"><br>
+        Azul<input type="radio" name="color" id="color"><br>
+        Oscuro<input type="radio" name="color" id="color" checked><br><br>
+        Selecciona una asignatura
+        <select>
+            <option>DWES</option>
+            <option>DWEC</option>
+            <option>DIW</option>
+            <option>DAW</option>
+            <option>ITGS</option>
+            <option>EIE</option>
+
+        </select><br><br>
+        <label for="dia">Selecciona los días con disponibilidad<br>
+        <input type="checkbox" onclick="selectall(document.forms[0])" />Deseleccionar todos<br>
+        <input type="checkbox" name="dia" >Lunes<br>
+        <input type="checkbox" name="dia" >Martes<br>
+        <input type="checkbox" name="dia" >Miércoles<br>
+        <input type="checkbox" name="dia" >Jueves<br>
+        <input type="checkbox" name="dia" >Viernes
+        
+        </label>
+        <input type="number" id="confirmar" min="2" max="5" hidden><br><br>
+
+        Selecciona el día preferido
+        <select>
+            <option selected>Lunes</option>
+            <option>Martes</option>
+            <option>Miércoles</option>
+            <option >Jueves</option>
+            <option>Viernes</option>
+
+        </select><br><br>
+
+        <p id="mensajeError"></p>
+        <input type="button" value="Haz click para enviar el formulario" id="enviar">
+        <input type="button" value="Comenzar a rellenar de nuevo">
+        <input type="button" onclick="window.location.href='https://www.google.com/';" value="Haz click sobre mí" />
+    </div>
+    </form>
+</div>
+
+
+
+</body>
+</html>

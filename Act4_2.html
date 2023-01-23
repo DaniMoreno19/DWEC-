@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Act 4.2</title>
+    <meta charset="UTF-8">
+    <!-- Agregar un punto al final de cada párrafo contenido 
+        en el div con id llamado bloque2.-->
+
+</head>
+
+<body>
+    <h1>Primer Bloque de párrafos</h1>
+    <div id="bloque1">
+        <p>Este es el primer párrafo</p>
+        <p>Este es el segundo párrafo</p>
+        <p>Este es el tercer párrafo</p>
+    </div>
+    <h1>Segundo Bloque de párrafos</h1>
+    <div id="bloque2">
+        <p>Este es el primer párrafo</p>
+        <p>Este es el segundo párrafo</p>
+        <p>Este es el tercer párrafo</p>
+    </div>
+    <input type="button" value="Agregar un punto al final de cada párrafo" onclick="cambiarParrafos()">
+
+    <script>
+
+        function cambiarParrafos() {
+            let bloque = document.getElementById("bloque2")
+            let parrafo = bloque.getElementsByTagName('p')
+            for (let elemento of parrafo)
+                elemento.childNodes[0].nodeValue += '.'
+        }
+
+        /*
+        OTRA SOLUCIÓN SENCILLA
+        --Agregar un id a cada p
+        --Poner el getElemenetById añadiendole un punto
+        */
+
+
+    </script>
+</body>
+
+</html>

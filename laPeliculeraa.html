@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>la Peliculera</title>
+</head>
+
+<body>
+    <script>
+
+        const peliculas = ["Spider Man", "Superman", "Dragon Ball Super", "La era del hielo", "18videos"];
+        const regalos = ["Agua", "Caramelos", "Palomitas", "Perrito", "Refresco"];
+
+
+
+        let nombre = String(prompt("Introduce tu nombre:", ""));
+
+        do {
+            if (nombre == null || nombre == "" || !isNaN(nombre)) {
+                alert("Nombre no válido");
+                nombre = String(prompt("Introduce tu nombre:", ""));
+
+            }
+        } while (nombre == null || nombre == "" || !isNaN(nombre));
+
+        let edad = Number(prompt("Introduce tu edad:", ""));
+
+
+        do {
+            if (edad == null || edad == "" || isNaN(edad) || edad < 0) {
+                alert("Edad no válida");
+                edad = Number(prompt("Introduce tu edad:", ""));
+
+            }
+
+        } while (edad == null || edad == "" || isNaN(edad) || edad < 0);
+
+
+        let peli = prompt("Introduce la película que quieres ver: \n 1.-Spider Man\n2.-Superman\n3.-Dragon Ball Super\n4.-La era de hielo\n5.-18videos");
+        let precio = 10;
+
+        if (peli == "1" || peli == "2" || peli == "3" || peli == "4") {
+
+            if (edad <= 17) {
+                preecio=precio*0.5;
+                console.log("La entrada saldría a: "+precio *" acompañado de: "+regalos[1]+" y "+regalos[4])
+            }
+            else if (edad >= 18 && edad <= 25) {
+                console.log("La entrada saldría a: "+precio *" acompañado de: "+regalos[2]+", "+regalos[3]+" y "+regalos[4])
+            }
+            else if (edad >= 26 && edad <= 35) {
+                precio=precio*0.1;
+                console.log("La entrada saldría a: "+precio *" acompañado de: "+regalos[3]+" y "+regalos[4])
+            }
+            else {
+                precio=precio*0.2;
+                console.log("La entrada saldría a: "+precio *" acompañado de: "+regalos[0])
+            }
+        }
+        else {
+            alert("No has seleccionado ninguna pelicula");
+        }
+
+        console.log("Nombre: "+nombre);
+            console.log("Edad: "+edad);
+            console.log("Pelicula elegida: "+peli);
+            console.log("Precio Entrada: "+precio);
+            document.getElementById("entrada").innerHTML="<fieldset><h3>ENTRADA</h3><h4>Nombre: "+nombre+"</h4><h4>Edad: "+edad+"</h4><h4>Pelicula: "+peli+"</h4><h4>Precio Entrada: "+precio+"€</h4><h4></fieldset>";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                //var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+                //var removed = myFish.splice(2, 0, 'drum');
+
+// myFish is ["angel", "clown", "drum", "mandarin", "sturgeon"]
+    </script>
+
+
+
+
+
+</body>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pedir dos números y decir cual es el mayor o si son iguales..</title>
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+
+    <script>
+        /*
+        Programa que pida dos números y nos diga cuál es el mayor, el menor
+        o si son iguales. Si no son números o son menores que cero, que lo
+        vuelva a pedir
+        */
+        var a = parseInt(prompt("ingrese el primer numero",0));
+        var b = parseInt(prompt("ingrese el segundo numero",0));       
+        
+        while(a<0 || b<0 || isNaN(a)|| isNaN(b)){
+            a = parseInt(prompt("ingrese el primer numero",0));
+            b = parseInt(prompt("ingrese el segundo numero",0));
+        }
+
+        if(a==b){
+            alert("Los números son iguales");
+        }else if ( a>b){
+            alert("El número mayor es "+a);
+            alert("El número menor es "+b);
+
+        }else if ( b>a){
+            alert("El número mayor es "+b);
+            alert("El número menor es "+a);
+
+        }else{
+            alert("Introduce números correctos");
+        }
+
+
+    </script>
+</body>
+
+</html>

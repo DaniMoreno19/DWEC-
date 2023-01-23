@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Ejer cookies</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <button type="button" onclick="verCookies()">Ver todas las cookies</button>
+    <button type="button" onclick="crearModificarCookie()">Crear cookie</button>
+    <button type="button" onclick="crearModificarCookie()">Modificar cookie</button>
+    <button type="button" onclick="leerCookie()">Leer cookie</button>
+    <button type="button" onclick="borrarCookie()">Borrar cookie</button>
+
+</body>
+<script>
+    
+    function setCookie(nombre, valor, diasExp) {
+        const d = new Date();//Creas una fecha almacenándola en una variable
+        d.setTime(d.getTime() + (diasExp * 24 * 60 * 60 * 1000));//A la fecha creada se le asigna la fecha actual y se le suman los dias de expiración pasándolos a milisegundos
+        let expires = "expires=" + d.toUTCString();//Con el método toUTCString convierte la fecha en un string
+        document.cookie = nombre + "=" + valor + ";" + diasExp + ";path=/";//Por último, obtienes la cookie con el nombre, el valor y los días de expiración
+    }
+
+
+    function getCookie(cnombre) {
+        let nombre = cnombre + "=";//Buscamos la cookie por su nombre seguido del simbolo "=", por lo que creamos la variable nombre
+        let ca = document.cookie.split(";");//A continuación dividimos document.cookie en semi columnas, ca se vuelve un array que contiene todas las cookies para este dominio y ruta.
+        for (let i = 0; i < ca.length; i++) {//Se recorre el array declarado anteriormente
+            let c = ca[i];//Y se accede a cada uno de los elemnetos de ese array
+            while (c.charAt(0) === " ")//Utilizamos el while para ir evitando los espacios en blanco
+                c = c.substring(1, c.length);//y así el string c empieza con el nombre de la cookie actual
+            if (c.indexOf(nombre) === 0) //Si encontramos el nombre de la cookie
+                return c.substring(nombre.length, c.length);//devolvemos el nombre de esa cookie encontrada
+        }
+        return null;//Si no se encuentra nada se devuelve null
+    }
+
+
+    function deleteCookie(nombre) {
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';//Establece la fecha de vencimiento de la cookie en una fecha en el pasado, causando que el navegador la elimine.
+
+    }
+
+    function verCookies() {
+        alert(document.cookie);
+    }
+
+    function crearModificarCookie() {
+        var nombre = prompt("Introduce el nombre de la cookie:");
+        var valor = prompt("Introduce el valor de la cookie:");
+        var dias = prompt("Introduce el número de días hasta que expire:");
+        setCookie(nombre, valor, dias);
+
+    }
+
+    function leerCookie() {
+        var nombre = prompt("Introduce el nombre de la cookie:");
+        alert(getCookie(nombre));
+    }
+
+    function borrarCookie() {
+        var nombre = prompt("Introduce el nombre de la cookie:");
+        deleteCookie(nombre);
+    }
+
+
+</script>
+
+</html>
