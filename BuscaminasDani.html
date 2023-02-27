@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscaminas</title>
+    <link rel="stylesheet" href="BuscaminasDani.css">
+    <script src="BuscaminasDani.js"></script>
+</head>
+<body>
+    <div class="principal">
+        <div class="header">
+            <h1>BUSCAMINAS</h1>
+            <div class="formularioJuego">
+                <div class="formulario">
+                    <div class="entrada">
+                        <label for="tamanio">TAMAÑO (5-20) </label>
+                        <input id="tamanio" type="number" min="5" max="20" value="10">
+                    </div>
+                    <div class="entrada">
+                        <label for="numBombas">Nº DE BOMBAS (1-20): </label>
+                        <input id="numBombas" type="number" min="1" value="20">
+                    </div>
+                </div>
+                <button class="comenzar">Comenzar</button>
+            </div>
+        </div>
+        <div class="divJuego hidden">
+            <h2>Banderas colocadas: <span id="num-banderas"></span> (faltan <span id="banderasRestantes"></span>)</h2>
+            <div class="juego"></div>
+            <div class="resultado"></div>
+        </div>
+    </div>
+</body>
+
+</html>
